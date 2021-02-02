@@ -1,0 +1,16 @@
+div {
+  border: 1px solid red;
+  background-color: #c7af90;
+}
+
+.displayNone {
+  display: none;
+}
+
+.displayBlock {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}

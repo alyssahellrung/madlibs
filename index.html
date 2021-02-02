@@ -7,7 +7,28 @@
   <title>Mad Libs</title>
 </head>
 <body>
-  
+  <div id="inputPanel">
+    <h>Please answer a few questions:</h>
+    <p>A first name:
+      <input id="firstName" type="text" placeholder="first name">
+    </p>
+    <p>Your favorite color:
+      <input id="favColor" type="text" placeholder="favorite color">
+    </p>
+    <p>A place:
+      <input id="place" type="text" placeholder="place">
+    </p>
+    <button id="submit">Submit your answers</button>
+    <p id="warning">Please answer all questions.</p>
+  </div>
+
+  <div id="outputPanel">
+    <p>Your story...</p>
+    <p id="theStory">junk</p>
+    <button id="again">Again?</button>
+  </div>
+
+
   <script src="script.js"></script>
 </body>
 </html>
