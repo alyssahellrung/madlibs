@@ -14,3 +14,11 @@ div {
 button {
   cursor: pointer;
 }
+
+#warning {
+  background-color: red;
+}
+
+.bgPink {
+  background-color: pink;
+}

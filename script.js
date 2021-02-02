@@ -32,12 +32,25 @@ function keydownHandler(event) {
 
 function checkComplete() {
   // verify the user filled in the form (I did this differently than the tutorial guy did it)
-  if (firstName.value == "" || favColor.value == "" || place.value =="") {
+  firstName.classList.remove("bgPink");
+  favColor.classList.remove("bgPink");
+  place.classList.remove("bgPink");
+
+  if (firstName.value == "") {
+    firstName.className = "bgPink";
+  } 
+  if (favColor.value == "") {
+    favColor.className = "bgPink";
+  } 
+  if (place.value == "") {
+    place.className = "bgPink";
+  } 
+  if (firstName.value == "" || favColor.value == "" || place.value == "") {
     warning.className = "displayBlock";
     return false;
   } else {
     return true;
-  } 
+  }
 }
 
 function writeStory() {
@@ -46,12 +59,22 @@ function writeStory() {
     return;
   }
 
-  let finishedStory = ""
-  finishedStory += "Welcome, " + firstName.value + ". "
-  finishedStory += "Only silly people would choose " + favColor.value + " as their favorite color. "
-  finishedStory += "It sounds like " + place.value + " would be a fantastic place to visit."
+  const storyText1 = "Welcome, " + firstName.value + ". ";
+  const storyText2 = "Only silly people would choose " + favColor.value + " as their favorite color. ";
+  const storyText3 = "It sounds like " + place.value + " would be a fantastic place to visit.";
 
-  theStory.innerHTML = finishedStory;
+  const newP1 = document.createElement("p");
+  const newP2 = document.createElement("p");
+  const newP3 = document.createElement("p");
+  const newT1 = document.createTextNode(storyText1);
+  const newT2 = document.createTextNode(storyText2);
+  const newT3 = document.createTextNode(storyText3);
+  newP1.appendChild(newT1);
+  newP2.appendChild(newT2);
+  newP3.appendChild(newT3);
+  theStory.appendChild(newP1);
+  theStory.appendChild(newP2);
+  theStory.appendChild(newP3);
 
   inputPanel.className = "displayNone";
   outputPanel.className = "displayBlock";
@@ -67,6 +90,9 @@ function resetPage() {
   firstName.value = "";
   favColor.value = "";
   place.value = "";
+  firstName.classList.remove("bgPink");
+  favColor.classList.remove("bgPink");
+  place.classList.remove("bgPink");
   theStory.innerHTML = "";
 
   firstName.focus();
