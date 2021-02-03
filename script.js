@@ -31,10 +31,8 @@ function keydownHandler(event) {
 }
 
 function checkComplete() {
-  // verify the user filled in the form (I did this differently than the tutorial guy did it)
-  firstName.classList.remove("bgPink");
-  favColor.classList.remove("bgPink");
-  place.classList.remove("bgPink");
+  // Verify the user filled in the form (I did this differently than the tutorial guy did it)
+  removePinkBG();
 
   if (firstName.value == "") {
     firstName.className = "bgPink";
@@ -63,23 +61,21 @@ function writeStory() {
   const storyText2 = "Only silly people would choose " + favColor.value + " as their favorite color. ";
   const storyText3 = "It sounds like " + place.value + " would be a fantastic place to visit.";
 
-  const newP1 = document.createElement("p");
-  const newP2 = document.createElement("p");
-  const newP3 = document.createElement("p");
-  const newT1 = document.createTextNode(storyText1);
-  const newT2 = document.createTextNode(storyText2);
-  const newT3 = document.createTextNode(storyText3);
-  newP1.appendChild(newT1);
-  newP2.appendChild(newT2);
-  newP3.appendChild(newT3);
-  theStory.appendChild(newP1);
-  theStory.appendChild(newP2);
-  theStory.appendChild(newP3);
+  addTextNode(storyText1);
+  addTextNode(storyText2);
+  addTextNode(storyText3);
 
   inputPanel.className = "displayNone";
   outputPanel.className = "displayBlock";
   warning.className = "displayNone";
 }
+
+function addTextNode(text) {
+  const newP = document.createElement("p");
+  const newT = document.createTextNode(text);
+  newP.appendChild(newT);
+  theStory.appendChild(newP);
+} 
 
 function resetPage() {
   // reset the page so the user can try again
@@ -90,10 +86,16 @@ function resetPage() {
   firstName.value = "";
   favColor.value = "";
   place.value = "";
-  firstName.classList.remove("bgPink");
-  favColor.classList.remove("bgPink");
-  place.classList.remove("bgPink");
+
+  removePinkBG();
+
   theStory.innerHTML = "";
 
   firstName.focus();
+}
+
+function removePinkBG() {
+  firstName.classList.remove("bgPink");
+  favColor.classList.remove("bgPink");
+  place.classList.remove("bgPink");
 }
