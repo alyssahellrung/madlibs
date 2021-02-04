@@ -8,11 +8,17 @@ submit.addEventListener("click", writeStory, false);
 const again = document.querySelector("#again");
 again.addEventListener("click", resetPage, false);
 
-document.querySelector("#firstName").focus();
+document.querySelector("#adjective1").focus();
 
-const firstName = document.querySelector("#firstName");
-const favColor = document.querySelector("#favColor");
-const place = document.querySelector("#place");
+const adjective1 = document.querySelector("#adjective1");
+const timeperiod = document.querySelector("#time");
+const pnoun1 = document.querySelector("#pnoun1");
+const pnoun2 = document.querySelector("#pnoun2");
+
+
+
+
+
 const theStory = document.querySelector("#theStory");
 
 window.addEventListener("keydown", keydownHandler, false);
@@ -21,7 +27,7 @@ inputPanel.className = "displayBlock";
 outputPanel.className = "displayNone";
 warning.className = "displayNone";
 
-firstName.focus();
+adjective1.focus();
 
 function keydownHandler(event) {
   if (event.keyCode === 13) {
@@ -31,19 +37,22 @@ function keydownHandler(event) {
 }
 
 function checkComplete() {
-  // Verify the user filled in the form (I did this differently than the tutorial guy did it)
+  // Verify the user filled in the form 
   removePinkBG();
 
-  if (firstName.value == "") {
-    firstName.className = "bgPink";
+  if (adjective1.value == "") {
+    adjective1.className = "bgPink";
   } 
-  if (favColor.value == "") {
-    favColor.className = "bgPink";
+  if (timeperiod.value == "") {
+    timeperiod.className = "bgPink";
   } 
-  if (place.value == "") {
-    place.className = "bgPink";
+  if (pnoun1.value == "") {
+    pnoun1.className = "bgPink";
   } 
-  if (firstName.value == "" || favColor.value == "" || place.value == "") {
+  if (pnoun2.value == "") {
+    pnoun2.className = "bgPink";
+  } 
+  if (adjective1.value == "" || timeperiod.value == "" || pnoun1.value == "" || pnoun2.value == "") {
     warning.className = "displayBlock";
     return false;
   } else {
@@ -57,13 +66,16 @@ function writeStory() {
     return;
   }
 
-  const storyText1 = "Welcome, " + firstName.value + ". ";
-  const storyText2 = "Only silly people would choose " + favColor.value + " as their favorite color. ";
-  const storyText3 = "It sounds like " + place.value + " would be a fantastic place to visit.";
+  const storyText1 = "Today we are going to the " + adjective1.value + " circus! The circus only comes to town once per " + timeperiod.value + ". All of the " + pnoun1.value + " and " + pnoun2.value + " look forward to the show.";
+  // const storyText2 = "Only silly people would choose " + favColor.value + " as their favorite color. ";
+  // const storyText3 = "It sounds like " + place.value + " would be a fantastic place to visit.";
 
   addTextNode(storyText1);
-  addTextNode(storyText2);
-  addTextNode(storyText3);
+  // addTextNode(storyText2);
+  // addTextNode(storyText3);
+  // addTextNode(storyText4);
+  // addTextNode(storyText5);
+  // addTextNode(storyText6);
 
   inputPanel.className = "displayNone";
   outputPanel.className = "displayBlock";
@@ -83,19 +95,21 @@ function resetPage() {
   outputPanel.className = "displayNone";
   warning.className = "displayNone";
 
-  firstName.value = "";
-  favColor.value = "";
-  place.value = "";
+  adjective1.value = "";
+  timeperiod.value = "";
+  pnoun1.value = "";
+  pnoun2.value = "";
 
   removePinkBG();
 
   theStory.innerHTML = "";
 
-  firstName.focus();
+  adjective1.focus();
 }
 
 function removePinkBG() {
-  firstName.classList.remove("bgPink");
-  favColor.classList.remove("bgPink");
-  place.classList.remove("bgPink");
+  adjective1.classList.remove("bgPink");
+  timeperiod.classList.remove("bgPink");
+  pnoun1.classList.remove("bgPink");
+  pnoun2.classList.remove("bgPink");
 }
