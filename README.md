@@ -1,12 +1,6 @@
-# Make-A-Story App
+![image](./assets/shot1.png)  
 
-## A Mad Libs web app! You fill in the words, the app does the rest!
-
-## Base code came from a YouTube tutorial by John McCaffrey
-
-# Lemur Learning
-
-## Desription  
+## Description  
 A JavaScript Mad Libs-type application that allows users to enter words and then submit them to see a completed story.
 
 ## Table of Contents
@@ -30,17 +24,23 @@ CSS
 Javascript           
 
 ## How to Use      
-Navigate to https://alyssahellrung.github.io/lemurfanpage/. 
+Navigate to https://alyssahellrung.github.io/make-a-story/. On the first page you will see a series of prompts that ask you to enter certain kinds of words (adjectives, nouns, verbs, etc.).  
+![image](./assets/shot2.png)  
+If you try to submit the inputs before filling them all in, an alert will come up that asks you to fill in every blank.  
+![image](./assets/shot4.png)  
+Once you have filled in all of the blanks, click the submit button (or press enter) to see a completed story that uses the words you entered. If you would like to try again with different words, click the "Again" button at the end of the story.  
 
+![image](./assets/shot3.png)
 
 ## How I Made This    
-I built this project with HTML5 and CSS with UIkit. The purpose of the project was initially to practice using UIkit, a library I had never used before. As I got more into the project, the educational value of it became more apparent, and rather than make a silly webpage that didn't really say anything, I turned it into more of an actual educational effort. 
+The main architecture of this app came from a YouTube Mad Libs tutorial by John McCaffrey. After writing the basic funcitonality of the app, I extended it to make a full story and changed the style so that it looked more inviting.
 
 ## Link to Deployed Application  
-https://alyssahellrung.github.io/lemurfanpage/  
+https://alyssahellrung.github.io/make-a-story/ 
 
 ## Link to GitHub Repo      
-https://github.com/alyssahellrung/lemurfanpage/    
+https://github.com/alyssahellrung/make-a-story
 
 ## Future Development Ideas     
---I would like to add more user interaction--perhaps users could sign a guest book when they visit, or they could fill out a contact form for a lemur newsletter.     
+--More stories! I would like for users to have different story options to choose from.   
+--A lot of the code is very repetitive, so I would like to refactor it even further to make it more DRY.  
